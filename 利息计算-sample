@@ -1,0 +1,16 @@
+def earning(init, year=1, rate=0.03):
+    if year == 1:
+        total = init * 12
+        print("您的一年期收益为{money}".format(money=total))
+    elif year > 1:
+        count = 2  # init year count
+        init_total = init * 12
+        while count <= year:
+            new_init = init * (1+rate)  # calc new init value
+            init_total += new_init * 12  # calc new total value
+            print("您投资计划{year}年，收益为{init_total}".format(year=count, init_total = init_total))
+            count += 1
+
+
+if __name__ == "__main__":
+    earning(3000, 10)
